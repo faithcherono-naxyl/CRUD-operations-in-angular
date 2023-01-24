@@ -1,0 +1,22 @@
+<form #form="ngForm" (submit)="onSubmit(form)"    autocomplete="on">
+    <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="service.formData.Id">
+    <div class="form-group">
+        <label>USERNAME</label>
+        <input name="Username" #Username="ngModel" [(ngModel)]="service.formData.Username"  name="Username" class="form-control" required>
+        <div class="validation-error" *ngIf="Username.invalid && Username.touched">This field is required.</div>
+    
+    </div>
+    <div class="form-group">
+        <label>PASSWORD</label>
+        <input type="password" #Password="ngModel" [(ngModel)]="service.formData.Password" name="Password" class="form-control">
+        <div class="validation-error" *ngIf="Password.invalid && Password.touched">This field is required.</div>
+    
+
+    </div>
+    
+    <div class="form-group " >
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SIGN UP</button>
+    
+    </div>
+    
+    </form>
